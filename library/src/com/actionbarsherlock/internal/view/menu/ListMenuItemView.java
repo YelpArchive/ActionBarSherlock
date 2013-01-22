@@ -98,6 +98,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         mShortcutView = (TextView) findViewById(R.id.abs__shortcut);
     }
 
+    @Override
     public void initialize(MenuItemImpl itemData, int menuType) {
         mItemData = itemData;
         //UNUSED mMenuType = menuType;
@@ -115,6 +116,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         mPreserveIconSpacing = mForceShowIcon = forceShow;
     }
 
+    @Override
     public void setTitle(CharSequence title) {
         if (title != null) {
             mTitleView.setText(title);
@@ -125,10 +127,12 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         }
     }
 
+    @Override
     public MenuItemImpl getItemData() {
         return mItemData;
     }
 
+    @Override
     public void setCheckable(boolean checkable) {
 
         if (!checkable && mRadioButton == null && mCheckBox == null) {
@@ -175,6 +179,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         }
     }
 
+    @Override
     public void setChecked(boolean checked) {
         CompoundButton compoundButton;
 
@@ -193,6 +198,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         compoundButton.setChecked(checked);
     }
 
+    @Override
     public void setShortcut(boolean showShortcut, char shortcutKey) {
         final int newVisibility = (showShortcut && mItemData.shouldShowShortcut())
                 ? VISIBLE : GONE;
@@ -206,6 +212,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         }
     }
 
+    @Override
     public void setIcon(Drawable icon) {
         final boolean showIcon = mItemData.shouldShowIcon() || mForceShowIcon;
         if (!showIcon && !mPreserveIconSpacing) {
@@ -267,10 +274,12 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
         addView(mCheckBox);
     }
 
+    @Override
     public boolean prefersCondensedTitle() {
         return false;
     }
 
+    @Override
     public boolean showsIcon() {
         return mForceShowIcon;
     }

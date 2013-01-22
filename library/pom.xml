@@ -6,12 +6,13 @@
 	<groupId>com.actionbarsherlock</groupId>
 	<artifactId>library</artifactId>
 	<name>ActionBarSherlock</name>
+	<version>4.1.0-customListChoiceIndicator</version>
 	<packaging>apklib</packaging>
 
 	<parent>
 		<groupId>com.actionbarsherlock</groupId>
 		<artifactId>parent</artifactId>
-		<version>4.1.0-customListChoiceIndicator</version>
+		<version>4.1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 

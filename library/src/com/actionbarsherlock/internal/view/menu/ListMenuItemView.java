@@ -45,6 +45,8 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     private TextView mShortcutView;
 
     private Drawable mBackground;
+    private Drawable mRadioButtonIcon;
+    private Drawable mCheckBoxIcon;
     private int mTextAppearance;
     private Context mTextAppearanceContext;
     private boolean mPreserveIconSpacing;
@@ -66,6 +68,8 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
                 attrs, R.styleable.SherlockMenuView, defStyle, 0);
 
         mBackground = a.getDrawable(R.styleable.SherlockMenuView_itemBackground);
+        mRadioButtonIcon = a.getDrawable(R.styleable.SherlockMenuView_listChoiceIndicatorSingle);
+        mCheckBoxIcon = a.getDrawable(R.styleable.SherlockMenuView_listChoiceIndicatorMultiple);
         mTextAppearance = a.getResourceId(R.styleable.
                                           SherlockMenuView_itemTextAppearance, -1);
         mPreserveIconSpacing = a.getBoolean(
@@ -133,9 +137,11 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
 
         if (mRadioButton == null) {
             insertRadioButton();
+            mRadioButton.setButtonDrawable(mRadioButtonIcon);
         }
         if (mCheckBox == null) {
             insertCheckBox();
+            mCheckBox.setButtonDrawable(mCheckBoxIcon);
         }
 
         // Depending on whether its exclusive check or not, the checkbox or

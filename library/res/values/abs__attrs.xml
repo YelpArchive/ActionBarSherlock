@@ -239,6 +239,10 @@
         <attr name="itemIconDisabledAlpha" format="float" />
         <!-- Whether space should be reserved in layout when an icon is missing. -->
         <attr name="preserveIconSpacing" format="boolean" />
+        <!-- Radio button for a menu item -->
+        <attr name="listChoiceIndicatorSingle" format="reference" />
+        <!-- Check button for a menu item -->
+        <attr name="listChoiceIndicatorMultiple" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="SherlockActionMenuItemView">
